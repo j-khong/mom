@@ -1,0 +1,7 @@
+<template name="Profile">
+{{#if currentUser}}
+email: {{currentUser.emails.[0].address}}<br>
+firstname: {{currentUser.profile.firstname}}<br>
+lastname: {{currentUser.profile.lastname}}
+{{/if}}
+</template>

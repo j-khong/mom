@@ -1,0 +1,7 @@
+{
+  "public": {
+    "env": "dev",
+    "activateConsole": true
+  },
+  "private": {}
+}

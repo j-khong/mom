@@ -1,0 +1,123 @@
+<template name="Login">
+
+	<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+				
+  <a class="nav-brand" href="/">Mon App</a>
+  {{#if currentUser}}
+  <a class="logout" href="#">Log out</a>
+  {{/if}}
+    <div class="row m-n">
+      <div class="col-sm-4 col-sm-offset-4 m-t-lg">
+        <section class="panel">
+          <header class="panel-heading text-center">
+            Me connecter
+          </header>
+      
+      {{#if error}}
+        <div class="alert alert-danger" role="alert">
+        <button type="button" class="close close-error" data-dismiss="alert">&times;</button>
+        {{error}}
+        </div>
+      {{/if}}
+
+          <form action="#" method="POST" class="panel-body" id="connection-form">
+            <div class="form-group">
+              <label class="control-label">Email</label>
+              <input type="email" placeholder="test@example.com" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mot de passe</label>
+              <input type="password" placeholder="mot de passe" class="form-control" id="password" name="password">
+            </div>
+            <a href="#" class="pull-right m-t-xs forgot-password"><small>-- Mot de passe oublié? --</small></a>
+            <button type="submit" class="btn btn-info" id="at-btn">Connexion</button>
+
+            <div class="line line-dashed"></div>
+            <a href="#" class="btn btn-facebook btn-block m-b-sm" id="facebook-login"><i class="fa fa-facebook pull-left"></i>Connexion avec Facebook</a>
+            <div class="line line-dashed"></div>
+            <p class="text-muted text-center"><small>Pas de compte?</small></p>
+            <a href="#" class="btn btn-white btn-block create-account">Créez-en un!</a>
+          </form>
+        </section>
+      </div>
+    </div>
+	</section>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="chg-pwd-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Demandez à changer votre mot de passe</h4>
+      </div>
+      {{#if pwderror}}
+        <div class="alert alert-danger" role="alert">
+        <button type="button" class="close close-pwderror" data-dismiss="alert">&times;</button>
+        {{pwderror}}
+        </div>
+      {{/if}}
+      {{#if msg}}
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{msg}}
+        </div>
+      {{/if}}
+      <form action="#" method="POST" class="panel-body" id="chg-pwd-form">
+      <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label">Email</label>
+              <input type="email" placeholder="test@example.com" class="form-control" id="chgpwdemail" name="chgpwdemail">
+            </div>
+      </div>
+      <div class="modal-footer">
+            <button type="submit" class="btn btn-info" id="chgpwdbtn">Valider</button>
+      </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="create-account-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Créez vos identifiants et profitez ;-)</h4>
+      </div>
+      {{#if error}}
+        <div class="alert alert-danger" role="alert">
+        <button type="button" class="close close-error" data-dismiss="alert">&times;</button>
+        {{error}}
+        </div>
+      {{/if}}
+      {{#if msg}}
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{msg}}
+        </div>
+      {{/if}}
+      <form action="#" method="POST" class="panel-body" id="create-account-form">
+      <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label">Email</label>
+              <input type="email" placeholder="test@example.com" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mot de passe</label>
+              <input type="password" placeholder="mot de passe" class="form-control" id="password1" name="password1">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mot de passe (vérification)</label>
+              <input type="password" placeholder="mot de passe" class="form-control" id="password2" name="password2">
+            </div>
+      </div>
+      <div class="modal-footer">
+            <button type="submit" class="btn btn-info" id="createAccountbtn">Valider</button>
+      </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+</template>

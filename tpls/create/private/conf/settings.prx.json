@@ -1,0 +1,7 @@
+{
+  "public": {
+    "env": "prx",
+    "activateConsole": true
+  },
+  "private": {}
+}

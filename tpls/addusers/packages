@@ -1,0 +1,25 @@
+
+###
+# added with MoM addusers
+
+# html, css
+fortawesome:fontawesome
+twbs:bootstrap
+matb33:bootstrap-glyphicons
+
+# accounts
+accounts-ui
+accounts-base
+accounts-password
+#useraccounts:unstyled => this one seems to create the login forbidden error, with meteor 1.5.4 and not 1.6, so using the next one
+useraccounts:flow-routing # needed for AccountsTemplates
+#softwarerero:accounts-t9n # translate login labels for accounts-base => already in useraccounts:flow-routing
+alanning:roles # add roles to users
+accounts-facebook
+service-configuration
+
+# emails
+email
+meteorhacks:ssr # email template
+
+##### end

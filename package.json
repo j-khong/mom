@@ -1,0 +1,27 @@
+{
+  "name": "MoM",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "MoM": "./bin/MoM"
+  },
+  "main": "MoM",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "fs-extra": "^5.0.0",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.21.0",
+    "osx-notifier": "^0.2.2",
+    "readline-sync": "^1.4.9",
+    "replace": "^0.3.0",
+    "runsync": "^0.1.8",
+    "scp": "0.0.3",
+    "spawn-sync": "^1.0.15"
+  }
+}

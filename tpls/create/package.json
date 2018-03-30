@@ -1,0 +1,18 @@
+{
+  "name": "PRJNAME",
+  "private": true,
+  "scripts": {
+    "dev": "meteor --settings private/conf/settings.dev.json",
+    "prx": "meteor --settings private/conf/settings.prx.json"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "body-parser": "^1.17.2",
+    "meteor-node-stubs": "~0.2.4",
+    "moment": "^2.18.1"
+  },
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "julien khong",
+  "license": "ISC"
+}

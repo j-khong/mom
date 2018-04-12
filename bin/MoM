@@ -1,63 +1,56 @@
 #!/usr/bin/env node
 
-require('colors');
-var doc = require('../lib/doc');
-const conf = require('../lib/conf');
+require("colors");
+var doc = require("../lib/doc");
+const conf = require("../lib/conf");
 const Log = require("../lib/helpers/log");
 const CliError = require("../lib/errors/cliError");
 //console.log(process); return;
 
-try{
-  launch();
+try {
+   launch();
 }
-catch(e)
-{ 
-  if( e instanceof CliError ){
-    console.error(e.message.bold.red);
-    console.log("see the doc : MoM help "+e.action);
-    console.log("");
-    //doc.printHelp();
-  }
-  else
-  { Log.displayError(e.message); }
-  //console.log(e);
+catch( e ) {
+   if( e instanceof CliError ) {
+      console.error(e.message.bold.red);
+      console.log("see the doc : MoM help " + e.action);
+      console.log("");
+      //doc.printHelp();
+   }
+   else { Log.displayError(e.message); }
+   //console.log(e);
 }
 
-function launch(){
-  console.log(Log.formatHeader(['Meteor over the Moon', ' makes your bullet proof dev easier']).bold.cyan);
+function launch() {
+   console.log(Log.formatHeader(["Meteor over the Moon", " makes your bullet proof dev easier"]).bold.cyan);
 
-  var cliOptions = require('minimist')(process.argv.slice(2));
-  //console.log(cliOptions);return;
-  if( cliOptions._.length == 0 )
-  { throw new CliError(Log.formatError(["please choose an action to perform"])); }
+   var cliOptions = require("minimist")(process.argv.slice(2));
+   //console.log(cliOptions);return;
+   if( cliOptions._.length == 0 ) { throw new CliError(Log.formatError(["please choose an action to perform"])); }
 
-  var actionName = cliOptions._[0];
-  var action = conf.getAction(actionName);
-  if( !action )
-  { throw new CliError(Log.formatError(["Unknown action "+ actionName])); }
+   var actionName = cliOptions._[0];
+   var action = conf.getAction(actionName);
+   if( !action ) { throw new CliError(Log.formatError(["Unknown action " + actionName])); }
 
-  var actionSwitches = action.switches;
-  var aErrors = [];
-  var aBefore = ["For the action ["+ actionName + "] :"];
-  actionSwitches.forEach((aswitch)=>{
-    if( !cliOptions[aswitch.name] ){
-      if( !aswitch.default)
-      { aErrors.push(" you must provide "+doc.switchPrefix+aswitch.name+"=yourValue"); }
-      else
-      { cliOptions[aswitch.name] = aswitch.default; }
-    }
-  })
-  if(aErrors.length > 0)
-  { throw new CliError(Log.formatError(aBefore.concat(aErrors)), actionName); }
+   var actionSwitches = action.switches;
+   var aErrors = [];
+   var aBefore = ["For the action [" + actionName + "] :"];
+   actionSwitches.forEach((aswitch) => {
+      if( !cliOptions[aswitch.name] ) {
+         if( !aswitch.default ) { aErrors.push(" you must provide " + doc.switchPrefix + aswitch.name + "=yourValue"); }
+         else { cliOptions[aswitch.name] = aswitch.default; }
+      }
+   });
+   if( aErrors.length > 0 ) { throw new CliError(Log.formatError(aBefore.concat(aErrors)), actionName); }
 
-  //console.log(action)
+   //console.log(action)
 
-  cliOptions.desc = action.desc;
-  // only for switch "help", for now
-  cliOptions.conf = conf;
-  cliOptions.doc = doc;
-  
-  action.action(cliOptions);
+   cliOptions.desc = action.desc;
+   // only for switch "help", for now
+   cliOptions.conf = conf;
+   cliOptions.doc = doc;
+
+   action.action(cliOptions);
 }
 
 

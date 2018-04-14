@@ -17,7 +17,7 @@
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.21.0",
-    "osx-notifier": "^0.2.2",
+    "node-notifier": "^5.2.1",
     "readline-sync": "^1.4.9",
     "replace": "^0.3.0",
     "runsync": "^0.1.8",

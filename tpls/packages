@@ -26,6 +26,7 @@ kadira:flow-router # client routing
 meteorhacks:picker # server routing
 kadira:blaze-layout
 raix:handlebar-helpers
+jkhong:momutils
 
 # Validation
 check

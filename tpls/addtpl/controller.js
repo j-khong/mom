@@ -1,10 +1,10 @@
-import {NamespaceToReplace} from '../_base.js';
+import {NT} from "/imports/common/_base.js";
 
-NamespaceToReplace.UI.Controllers.tplname = {
-    init(ui) {
-        this.ui = ui;
-        // does other things
-    }
-}
+NamespaceToReplace.Client.Controllers.tplname = {
+  init(ui) {
+    this.ui = ui;
+    // does other things
+  },
+};
 
 export {NamespaceToReplace};

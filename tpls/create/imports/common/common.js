@@ -1,7 +1,8 @@
-import {DevUtil} from "./devutils";
+import DevUtils from "@jkhong/devutils";
+import {Meteor} from "meteor/meteor";
 
 getPackageVersion = function() {
-  var pjson = require("../../package.json");
+  const pjson = require("../../package.json");
   return pjson.version;
 };
 
@@ -13,9 +14,9 @@ printEnvLog = function(data) {
 };
 
 getMailUrl = function() {
-  if( DevUtil.isSet(Meteor.settings.email)
-    && DevUtil.isSet(Meteor.settings.email.smtp) ) {
-    var smtp = Meteor.settings.email.smtp;
+  if( DevUtils.isSet(Meteor.settings.email)
+    && DevUtils.isSet(Meteor.settings.email.smtp) ) {
+    const smtp = Meteor.settings.email.smtp;
     return "smtp://"
       + encodeURIComponent(smtp.username)
       + ":"
@@ -33,13 +34,13 @@ String.prototype.capitalize = function() {
 };
 
 addConsoleNoOp = function(window) {
-  var names = ["log", "debug", "info", "warn", "error",
-      "assert", "dir", "dirxml", "group", "groupEnd", "time",
-      "timeEnd", "count", "trace", "profile", "profileEnd"],
-    i, l = names.length,
-    noOp = function() {};
+  const names = ["log", "debug", "info", "warn", "error",
+    "assert", "dir", "dirxml", "group", "groupEnd", "time",
+    "timeEnd", "count", "trace", "profile", "profileEnd"];
+
+  const noOp = function() {};
   window.console = {};
-  for( i = 0; i < l; i = i + 1 ) {
+  for( let i = 0; i < names.length; i++ ) {
     window.console[names[i]] = noOp;
   }
 };

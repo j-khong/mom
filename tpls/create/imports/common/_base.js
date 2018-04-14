@@ -1,1 +1,7 @@
-export const NamespaceToReplace = {};
+export const NamespaceToReplace = {
+  Database: {},
+  Client: {
+    Controllers: {},
+    UI: {},
+  },
+};

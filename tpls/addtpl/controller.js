@@ -1,4 +1,4 @@
-import {NT} from "/imports/common/_base.js";
+import {NamespaceToReplace} from "/imports/common/_base.js";
 
 NamespaceToReplace.Client.Controllers.tplname = {
   init(ui) {

@@ -1,11 +1,6 @@
 import {GlobalNS} from "/imports/database/models/user.js";
 
 var Model = GlobalNS.Database.User.Model;
-Meteor.users.deny({
-   insert() { return true; },
-   update() { return true; },
-   remove() { return true; }
-});
 
 Meteor.publish(Model.ColName, function() {
    return Meteor.users.find(this.userId, {

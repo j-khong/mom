@@ -31,15 +31,13 @@ jkhong:momutils
 # Validation
 check
 mdg:validated-method
+ziarno:restrict-mixin
 ddp-rate-limiter
 
 # db
-aldeed:collection2
-aldeed:simple-schema
+aldeed:collection2@3.0.0
 
 # UI
 juliancwirko:s-alert
 
-# debug
-meteortoys:allthings
 

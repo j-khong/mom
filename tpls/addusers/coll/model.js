@@ -1,12 +1,13 @@
-import {MomUtils}     from "meteor/jkhong:momutils";
-import {SimpleSchema} from "meteor/aldeed:simple-schema";
-import {GlobalNS}     from "/imports/common/_base.js";
+import SimpleSchema from "simpl-schema";
+import {MomUtils}   from "meteor/jkhong:momutils";
+import {GlobalNS}   from "/imports/common/_base";
 
 GlobalNS.Database.User = {};
 MomUtils.Database.create(GlobalNS.Database.User); // don't create mongo coll as it is native
 var Model = GlobalNS.Database.User.Model;
 Model.Col = Meteor.users;
 Model.ColName = "userscolname";
+Model.Col.deny(Model.Coll.DenyRules);
 
 /*
  *

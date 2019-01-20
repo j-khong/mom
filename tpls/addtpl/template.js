@@ -1,7 +1,7 @@
-import {MomUtils}           from "meteor/jkhong:momutils";
-import {Template}           from "meteor/templating";
-import {ReactiveVar}        from "meteor/reactive-var";
-import {NamespaceToReplace} from "/imports/client/controllers/tplname.js";
+import { MomUtils } from "meteor/jkhong:momutils";
+import { Template } from "meteor/templating";
+import { ReactiveVar } from "meteor/reactive-var";
+import { NamespaceToReplace } from "/imports/client/controllers/tplname.js";
 import "./tplname.html";
 
 class UI extends MomUtils.Client.UI.uiClass {
@@ -11,15 +11,24 @@ class UI extends MomUtils.Client.UI.uiClass {
   }
 }
 
-Template.tplname.onCreated(function() {
+const Ctrl = NamespaceToReplace.Client.Controllers.tplname;
+const Requests = NamespaceToReplace.Database.Entity.Requests;
+
+Template.tplname.onCreated(function () {
   var inst = this;
   console.log("onCreated");
-  //NamespaceToReplace.Database.Entity.Requests.subscribe(inst, tpl => {});
-  inst.ui = new UI();
-  NamespaceToReplace.Client.Controllers.tplname.init(inst.ui);
-});
+  //Requests.subscribe(inst, callback);
+  //Requests.subscribeTo(collname, data = null, inst, callback);
 
-Template.tplname.onRendered(function() {
+  inst.ui = new UI();
+  Ctrl.init(inst.ui);
+});
+function callback(inst) {
+  // const obj = Requests.findOne();
+  // inst.somereactivevar.set(obj);
+}
+
+Template.tplname.onRendered(function () {
   console.log("onRendered");
 });
 

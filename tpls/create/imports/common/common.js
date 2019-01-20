@@ -14,9 +14,9 @@ printEnvLog = function(data) {
 };
 
 getMailUrl = function() {
-  if( DevUtils.isSet(Meteor.settings.email)
-    && DevUtils.isSet(Meteor.settings.email.smtp) ) {
-    const smtp = Meteor.settings.email.smtp;
+  if( DevUtils.isSet(Meteor.settings.private.email)
+    && DevUtils.isSet(Meteor.settings.private.email.smtp) ) {
+    const smtp = Meteor.settings.private.email.smtp;
     return "smtp://"
       + encodeURIComponent(smtp.username)
       + ":"
@@ -34,13 +34,11 @@ String.prototype.capitalize = function() {
 };
 
 addConsoleNoOp = function(window) {
-  const names = ["log", "debug", "info", "warn", "error",
-    "assert", "dir", "dirxml", "group", "groupEnd", "time",
-    "timeEnd", "count", "trace", "profile", "profileEnd"];
-
-  const noOp = function() {};
   window.console = {};
-  for( let i = 0; i < names.length; i++ ) {
-    window.console[names[i]] = noOp;
-  }
+  ["log", "debug", "info", "warn", "error",
+    "assert", "dir", "dirxml", "group", "groupEnd", "time",
+    "timeEnd", "count", "trace", "profile", "profileEnd"]
+  .forEach(fctName => {
+    window.console[fctName] = () => {};
+  });
 };

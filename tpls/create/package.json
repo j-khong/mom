@@ -10,7 +10,8 @@
     "body-parser": "^1.17.2",
     "meteor-node-stubs": "~0.2.4",
     "moment": "^2.18.1",
-    "@jkhong/devutils": "^1.0.0"
+    "@jkhong/devutils": "^1.0.0",
+    "simpl-schema": "^1.4.3"
   },
   "version": "0.0.1",
   "main": "index.js",

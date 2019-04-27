@@ -1,17 +1,18 @@
 {
   "name": "@jkhong/mom",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "bin": {
     "MoM": "./bin/MoM"
   },
-  "main": "MoM",
+  "main": "./bin/MoM",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@jkhong/cli-js": "^1.0.0",
     "colors": "^1.1.2",
     "fs-extra": "^5.0.0",
     "minimist": "^1.2.0",

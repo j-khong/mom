@@ -1,0 +1,52 @@
+Arguments: 
+  /Users/julien/.nvm/versions/node/v9.5.0/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add @jkhong/cli-js
+
+PATH: 
+  /Users/julien/.rvm/gems/ruby-2.4.1/bin:/Users/julien/.rvm/gems/ruby-2.4.1@global/bin:/Users/julien/.rvm/rubies/ruby-2.4.1/bin:/Users/julien/.nvm/versions/node/v9.5.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/julien/MesDoc/pro/travaux/scripts/sh/:/Users/julien/MesDoc/pro/travaux/scripts/sh/dev/java/:/Volumes/DevApps/Library/Android/sdk/tools/:/Volumes/DevApps/Library/Android/sdk/platform-tools/:/Applications/perforce.app:/usr/local/mysql/bin/:/Volumes/DevApps/bins/:/Users/julien/.rvm/bin
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  9.5.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Volumes/Home/julien/dev/projets_locaux/mom/node_modules/runsync/LICENSE'
+
+npm manifest: 
+  {
+    "name": "@jkhong/mom",
+    "version": "1.0.0",
+    "description": "",
+    "bin": {
+      "MoM": "./bin/MoM"
+    },
+    "main": "MoM",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "colors": "^1.1.2",
+      "fs-extra": "^5.0.0",
+      "minimist": "^1.2.0",
+      "mkdirp": "^0.5.1",
+      "moment": "^2.21.0",
+      "node-notifier": "^5.2.1",
+      "readline-sync": "^1.4.9",
+      "replace": "^0.3.0",
+      "runsync": "^0.1.8",
+      "scp": "0.0.3",
+      "spawn-sync": "^1.0.15"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
